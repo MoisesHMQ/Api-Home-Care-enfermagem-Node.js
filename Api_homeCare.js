@@ -77,3 +77,7 @@ app.delete('/excluir', (request,response) => {
             
     return response.send(excluirEmfermeiras)
     })
+
+app.listen(5000, () => {
+    console.log('Status: Siatema Funcionando...')
+    })
