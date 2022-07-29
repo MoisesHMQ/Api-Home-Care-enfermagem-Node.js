@@ -34,11 +34,11 @@ app.get('/listar/pacientes', (request, response) => {
     return response.json(pacientes)
     })
 
-    app.delete('/excluir/pacientes', (request,response) => {
-        const id = pacientes.indexOf('id');
-        const excluirPacientes = pacientes.splice(id,1)
+app.delete('/excluir/pacientes', (request,response) => {
+    const id = pacientes.indexOf('id');
+    const excluirPacientes = pacientes.splice(id,1)
             
-        return response.send(excluirPacientes)
+    return response.send(excluirPacientes)
     })
 
 const emfermeiras = [];
