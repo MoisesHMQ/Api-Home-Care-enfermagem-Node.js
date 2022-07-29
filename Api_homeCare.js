@@ -19,6 +19,22 @@ app.post('/pacientes/cadastro', (request, response) => {
     return response.send("Status: Paciente Cadastrado")
 })
 
+app.post('/login/pacientes', (request, response) => {
+    const loginPacientes = pacientes.find((paciente) => paciente.nºficha == request.body.nºficha && paciente.senha == request.body.senha)
+    if(loginPacientes){
+        return response.send("status: Seja bem vindo")
+    }
+    else{
+        return response.send("erro: Nºficha ou Senha incorretos")
+    }
+    })
+    
+app.get('/listar/pacientes', (request, response) => {
+    console.log(request.body);
+    return response.json(pacientes)
+    })
+
+
 const emfermeiras = [];
 
 app.post('/emfermeiras/cadastrar', (request, response) => {
@@ -34,3 +50,4 @@ app.post('/emfermeiras/cadastrar', (request, response) => {
     })
     })
     return response.send("Status: Emfermeira cadastrado com sucesso.")
+
