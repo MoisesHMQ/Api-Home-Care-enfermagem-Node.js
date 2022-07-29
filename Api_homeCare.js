@@ -18,5 +18,3 @@ app.post('/pacientes/cadastro', (request, response) => {
     })
     return response.send("Status: Paciente Cadastrado")
 })
-
-
