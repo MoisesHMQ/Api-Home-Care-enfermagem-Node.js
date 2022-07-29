@@ -56,4 +56,3 @@ app.post('/emfermeiras/cadastrar', (request, response) => {
     })
     })
     return response.send("Status: Emfermeira cadastrado com sucesso.")
-
