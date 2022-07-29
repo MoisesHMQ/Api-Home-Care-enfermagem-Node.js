@@ -4,6 +4,7 @@ const app = express();
 var uuid = require('uuid');
 
 const pacientes = [];
+const emfermeiras = []
 
 app.post('/pacientes/cadastro', (request, response) => {
     const validarPacientes = pacientes.find((validacao) => validacao.nºficha == request.body.nºficha)
@@ -40,8 +41,6 @@ app.delete('/excluir/pacientes', (request,response) => {
             
     return response.send(excluirPacientes)
     })
-
-const emfermeiras = [];
 
 app.post('/emfermeiras/cadastrar', (request, response) => {
     const validarEmfermeiras = emfermeiras.find((emfermeira) => emfermeira.corem == request.body.corem)
