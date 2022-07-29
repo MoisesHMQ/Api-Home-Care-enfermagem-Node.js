@@ -70,3 +70,10 @@ app.delete('/excluir/pacientes', (request,response) => {
             
     return response.send(excluirPacientes)
     })
+
+app.delete('/excluir', (request,response) => {
+    const id = emfermeiras.indexOf('id');
+    const excluirEmfermeiras = emfermeiras.splice(id,1)
+            
+    return response.send(excluirEmfermeiras)
+    })
