@@ -18,3 +18,19 @@ app.post('/pacientes/cadastro', (request, response) => {
     })
     return response.send("Status: Paciente Cadastrado")
 })
+
+const emfermeiras = [];
+
+app.post('/emfermeiras/cadastrar', (request, response) => {
+    const validarEmfermeiras = emfermeiras.find((emfermeira) => emfermeira.corem == request.body.corem)
+        if (validarEmfermeiras){
+            return response.send("Erro: emfermeira ja existe.")}
+        
+        emfermeiras.push({
+        id: uuid.v4(),
+        nome: request.body.nome,
+        corem: request.body.corem,
+        senha: request.body.senha
+    })
+    })
+    return response.send("Status: Emfermeira cadastrado com sucesso.")
