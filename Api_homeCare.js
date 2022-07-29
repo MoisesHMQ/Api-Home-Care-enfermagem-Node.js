@@ -24,7 +24,7 @@ app.post('/emfermeiras/cadastrar', (request, response) => {
     const validarEmfermeiras = emfermeiras.find((emfermeira) => emfermeira.corem == request.body.corem)
         if (validarEmfermeiras){
             return response.send("Erro: emfermeira ja existe.")}
-        
+
         emfermeiras.push({
         id: uuid.v4(),
         nome: request.body.nome,
@@ -57,6 +57,11 @@ app.post('/login/emfermeiras', (request, response) => {
 app.get('/listar/pacientes', (request, response) => {
     console.log(request.body);
     return response.json(pacientes)
+})
+
+app.get('/listar/emfermeiras', (request, response) => {
+    console.log(request.body);
+    return response.json(emfermeiras)
 })
 
 app.delete('/excluir/pacientes', (request,response) => {
